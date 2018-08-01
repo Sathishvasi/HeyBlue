@@ -1,0 +1,254 @@
+/* @import '/bootstrap.min.css';
+@import '/bootstrap-theme.min.css'; */
+
+/* @import '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
+@import '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css'; */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700');
+
+.particle {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    z-index: -1
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8;
+  background-color: #000000 !important;
+}
+
+.mic-checkbox {
+  display: none;
+}
+
+.mic-checkbox:checked + .mic-button {
+  transform: rotateY(180deg);
+}
+
+.button-container {
+  perspective: 500px;
+  -moz-perspective: 500px;
+  -webkit-perspective: 500px;
+}
+
+.mic-button {
+  cursor: pointer;
+  /* margin-left: 35%; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  transition: transform 0.4s;
+  border: 2px solid #fff;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  position: relative;
+}
+
+.button-message, .mic {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.button-message {
+  position: absolute;
+  width: 50px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  z-index: 2;
+  transform: rotateY(0deg);
+  /* pointer-events: none; */
+  left: 23px;
+  top: 20px;
+}
+
+.mic-button-loader {
+  position: absolute;
+  height: 102px;
+  width: 100px;
+  background-color: transparent;
+  transform: rotateY(180deg);
+  top: -2px;
+  left: -2px;
+}
+
+.mic-checkbox:checked + .mic-button > .mic > .mic-button-loader {
+  border-top: 3px solid #00E2FF;
+  border-radius: 100%;
+  animation: borderLoader 1.3s 0.2s ease-in-out infinite; 
+}
+
+.mic {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.mic-base {
+  top: 46px;
+  left: -10px;
+  border-bottom: 5px solid #fff;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+}
+
+@keyframes borderLoader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.loader15 {
+  text-align: center;
+  color: #ffffff;
+  padding-top: 25%;
+  letter-spacing: 8px;
+  display: block;
+}
+
+.loader15 > div {
+  display: inline-block;
+  border-radius: 5px;
+  height: 5px;
+  width: 30px;
+  background: #ffffff;
+  animation: loader15 2s infinite;
+  position: relative;
+}
+
+.loader15 > div:nth-of-type(2) {
+  animation-delay: -1.5s;
+  background: #00e2ff;
+}
+
+.loader15 > div:nth-of-type(3) {
+  animation-delay: -1s;
+  background: #ffffff;
+}
+
+@keyframes loader15 {
+  0%,
+  100% {
+      width: 30px;
+  }
+  50% {
+      width: 45px;
+  }
+}
+
+.btn.btn-ghost {
+  background: transparent;
+  border: 2px solid #00e2ff;
+  color: #00e2ff;
+  transition: .3s all ease-in;
+}
+
+.btn.btn-ghost:hover {
+  background: #00e2ff;
+  color: #ffffff;
+  border: 2px solid #00e2ff;
+}
+
+.btn.btn-ghost:focus,
+.btn.btn-ghost:active {
+  outline: none;
+  background: transparent;
+  color: #00e2ff;
+  border: 2px solid #00e2ff;
+}
+
+.btn.btn-ghost.btn-ghost-white {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn.btn-ghost.btn-ghost-white:hover {
+  background: #ffffff;
+  color: #00e2ff;
+}
+
+.btn.btn-ghost.btn-ghost-white:focus,
+.btn.btn-ghost.btn-ghost-white:active {
+  outline: none;
+  background: #ffffff;
+  color: #00e2ff;
+  border: 2px solid #ffffff;
+}
+
+.neoastra-text-box{
+  vertical-align: middle;
+  background: transparent;
+  border: 2px solid #00e2ff;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+
+#snackbar {
+  visibility: hidden; 
+  min-width: 250px; 
+  margin-left: -125px; 
+  background-color: #333;
+  color: #fff; 
+  text-align: center;
+  border-radius: 2px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%; 
+  bottom: 30px; 
+  border-radius: 5px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.show {
+  visibility: visible !important; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+.copy-text{
+  position: relative;
+  float:right;
+  text-align: center;
+  padding-top: 1vh;
+}
