@@ -12,4 +12,6 @@ FUNCTIONALITIES:
   
   * Played audio through browser HTML audio elements 
   
-  * Made ajax call with "upload.php" to upload audio in our local folder
+  * Made ajax call with "upload.php" to upload audio in our local folder 
+  
+  * Folder name -> (recordings)
